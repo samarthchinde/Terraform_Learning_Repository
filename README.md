@@ -17,7 +17,7 @@ I created this repository to document my progress step-by-step while learning In
 
 ---
 
-# 🛠 Technologies Used
+# Technologies Used
 
 - Terraform
 - AWS Cloud
