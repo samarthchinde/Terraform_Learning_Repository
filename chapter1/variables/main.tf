@@ -2,7 +2,7 @@ provider "aws" {
     region = "ap-south-1"
 }
 
-variable "ami_id" {
+variable "ami_id" {                                                     #for making the code more reusable we are using variables
     description = "the id of the ami to use for the instance"
     type = string
     default = "ami-07a00cf47dbbc844c"
@@ -21,13 +21,13 @@ variable "subnet_id" {
 }
 
 resource "aws_instance" "demo_instance" {
-    ami = var.ami_id
+    ami = var.ami_id                                                #refer or call the variable by var.<variable_name> 
     instance_type = var.instance_type
     subnet_id = var.subnet_id
     key_name = "demo"
 }
 
-output "public_ip" {
+output "public_ip" {                                                    #output block is used to display the output of the resource after the execution of terraform apply command
     description = "this will give public ip of the instance"
-    value = aws_instance.demo_instance.public_ip
+    value = aws_instance.demo_instance.public_ip                        #give the value that we want to display as output
 }
