@@ -14,10 +14,16 @@ variable "instance_type" {
     default = "t3.micro"
 }
 
+variable "subnet_id" {
+    description = "the id of the subnet to launch the instance"
+    type = string
+    default = "subnet-0adf927845a1e17dc"
+}
+
 resource "aws_instance" "demo_instance" {
     ami = var.ami_id
     instance_type = var.instance_type
-    subnet_id = "subnet-0adf927845a1e17dc"
+    subnet_id = var.subnet_id
     key_name = "demo"
 }
 
