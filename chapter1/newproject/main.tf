@@ -1,4 +1,3 @@
-
 resource "aws_instance" "instance_one" {
     provider = aws.mumbai
     ami           = var.ami_id_mumbai
