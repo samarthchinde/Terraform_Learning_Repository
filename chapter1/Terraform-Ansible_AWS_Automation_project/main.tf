@@ -1,12 +1,9 @@
-provider "aws" {
-    region = "ap-south-1"          
-}
-
 resource "aws_instance" "Third_server" {
-    ami = "ami-07a00cf47dbbc844c"
-    subnet_id = "subnet-0adf927845a1e17dc"
-    instance_type = "t3.micro"
-    key_name = "demo"
+    provider = aws.mumbai
+    ami = var.ami_id
+    subnet_id = var.subnet_id
+    instance_type = var.instance_type
+    key_name = var.key_pair
     security_groups = [ "sg-0f8a67fc4cc8dc542" ]
 
     tags = {
@@ -15,10 +12,11 @@ resource "aws_instance" "Third_server" {
 }
 
 resource "aws_instance" "first_server" {
-    ami = "ami-07a00cf47dbbc844c"
-    subnet_id = "subnet-0adf927845a1e17dc"
-    instance_type = "t3.micro"
-    key_name = "demo"
+    provider = aws.mumbai
+    ami = var.ami_id
+    subnet_id = var.subnet_id
+    instance_type = var.instance_type
+    key_name = var.key_pair
     security_groups = [ "sg-0f8a67fc4cc8dc542" ]
 
     tags = {
@@ -27,10 +25,11 @@ resource "aws_instance" "first_server" {
 }
 
 resource "aws_instance" "second_server" {
-    ami = "ami-07a00cf47dbbc844c"
-    subnet_id = "subnet-0adf927845a1e17dc"
-    instance_type = "t3.micro"
-    key_name = "demo"
+    provider = aws.mumbai
+    ami = var.ami_id
+    subnet_id = var.subnet_id
+    instance_type = var.instance_type
+    key_name = var.key_pair
     security_groups = [ "sg-0f8a67fc4cc8dc542" ]
 
     tags = {
